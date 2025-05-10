@@ -5,10 +5,13 @@ export default function StadiumMap({ matchId, onZoneSelect }) {
     const [zones, setZones] = useState([]);
 
     useEffect(() => {
-        // Llama al backend para obtener zonas
-        fetch(`http://localhost:8080/api/zones/${matchId}`)
+        fetch(`http://localhost:8080/zones/${matchId}`)
             .then((res) => res.json())
-            .then((data) => setZones(data));
+            .then((data) => {
+                console.log("Zonas:", data);
+                setZones(data);
+            })
+            .catch((err) => console.error("Error al cargar zonas:", err));
     }, [matchId]);
 
     return (
@@ -19,9 +22,9 @@ export default function StadiumMap({ matchId, onZoneSelect }) {
                         key={zone.id}
                         x={zone.x}
                         y={zone.y}
-                        width={zone.width}
-                        height={zone.height}
-                        fill={zone.available ? 'green' : 'gray'}
+                        width={zone.ancho}
+                        height={zone.alto}
+                        fill={zone.disponible ? 'green' : 'gray'}
                         stroke="white"
                         strokeWidth="2"
                         className="stadium-zone"

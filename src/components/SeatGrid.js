@@ -7,7 +7,7 @@ export default function SeatGrid({ zoneId }) {
     const [email, setEmail] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/seats/zone/${zoneId}`)
+        fetch(`http://localhost:8080/seats/${zoneId}`)
             .then(res => res.json())
             .then(data => setSeats(data))
             .catch(err => console.error('Error al cargar asientos:', err));
@@ -15,7 +15,7 @@ export default function SeatGrid({ zoneId }) {
 
     const handleReserve = () => {
         if (!selectedSeat || !email) return;
-        fetch('http://localhost:8080/api/seats/reserve', {
+        fetch('http://localhost:8080/seats/reserve', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
