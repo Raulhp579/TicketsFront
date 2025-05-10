@@ -1,0 +1,29 @@
+.match-card {
+    background: #16213E;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.match-card h2 {
+    font-size: 1.2rem;
+}
+
+.match-card button {
+    padding: 0.5rem 1rem;
+    background-color: #A50044;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .match-card h2 {
+        font-size: 1rem;
+    }
+
+    .match-card button {
+        width: 100%;
+    }
+}
