@@ -23,6 +23,7 @@ export default function SeatGrid({ zoneId }) {
                 userEmail: email
             })
         })
+        
             .then(res => res.text())
             .then(msg => alert(msg))
             .catch(err => alert("Error al reservar: " + err));
