@@ -1,18 +1,20 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SeatSelection from './pages/SeatSelection';
 import Header from './components/Header';
 
 function App() {
   return (
-    <Router>
-      <Header></Header>
+    <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/asientos/:matchId" element={<SeatSelection />} />
+
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
 export default App;
+

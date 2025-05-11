@@ -13,13 +13,13 @@ export default function SeatSelection() {
 
     return (
         <div className="selection-container">
-            <h2>Selecciona una zona del estadio</h2>
+            <h2 style={{marginTop:'6lh'}}>Selecciona una zona del estadio</h2>
             <StadiumMap matchId={matchId} onZoneSelect={setSelectedZone} />
 
             {selectedZone && (
                 <div>
                     <h3>Zona: {selectedZone.name}</h3>
-                    <p>Precio: {selectedZone.price}€</p>
+                    <p>Precio: {selectedZone.precio}€</p>
                     <SeatGrid zoneId={selectedZone.id} />
 
                 </div>
