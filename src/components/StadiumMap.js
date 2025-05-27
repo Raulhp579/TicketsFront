@@ -13,9 +13,12 @@ export default function StadiumMap({ matchId, onZoneSelect }) {
                 console.log("Zonas:", data);
                 setZones(data);
             })
+
             .catch((err) => {
                 console.error("Error al cargar zonas:", err);
             });
+
+
     }, [matchId]);
 
     const handleMouseMove = (e) => {
@@ -51,6 +54,17 @@ export default function StadiumMap({ matchId, onZoneSelect }) {
                 {zones.map((zone) => (
                     <g
                         key={zone.id}
+
+
+                        x={zone.x}
+                        y={zone.y}
+                        width={zone.ancho}
+                        height={zone.alto}
+                        fill={zone.disponible ? 'green' : 'gray'}
+                        stroke="white"
+                        strokeWidth="2"
+                        className="stadium-zone"
+
                         onClick={() => onZoneSelect(zone)}
                         onMouseEnter={() => setHoveredZone(zone)}
                         onMouseLeave={() => setHoveredZone(null)}

@@ -46,7 +46,7 @@ const matches = [
 
 export default function Home() {
     return (
-        <div className='home' style={{ background: '#001E3C', color: 'white', padding: '1rem', marginTop:'8lh'}}>
+        <div className='home' style={{ background: '#001E3C', color: 'white', padding: '1lh', marginTop:'2lh'}}>
             <h1>Próximos Partidos</h1>
             {matches.map((match) => (
                 <MatchCard key={match.id} match={match} />

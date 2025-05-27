@@ -65,10 +65,10 @@ const Header = () => {
                                 <h3>Menú</h3>
 
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
-                                    <button onClick={() => abrirMenu('Tickets')}>Tickets</button>
+                                    <button onClick={() => abrirMenu('Tickets')}>Credenciales</button>
                                     <div style={{ height: '2px', backgroundColor: 'white', width: '100%' }}></div>
 
-                                    <button onClick={() => abrirMenu('Contacto')}>Contacto</button>
+                                    <button onClick={() => abrirMenu('Contacto')}>Ubicación</button>
                                     <div style={{ height: '2px', backgroundColor: 'white', width: '100%' }}></div>
                                     <button onClick={cerrarMenu}>Cerrar</button>
 
@@ -79,8 +79,8 @@ const Header = () => {
                         {/* Cuadro de Tickets */}
                         {openDialog === 'Tickets' && (
                             <dialog className='dialogTickets' open>
-                                <h3>Tickets</h3>
-                                <p>Aquí los usuarios compran los tickets.</p>
+                                <h3 style={{ color:'rgb(8, 8, 8)' }}>Credenciales</h3>
+                                <p>Esta app esta hecha por <b>Raul Henares Palacios</b> y <b>José Ramón Rejano Ruge</b>. Consiste en una app para la venta de entradas para partidos de futbol en el estadio del FC Barcelona <b>"Spotify Camp Nou"</b> y lo mejor de todo que podrás elegir un asiento personalizado acorde a tus preferencias.</p>
                                 <button onClick={cerrarMenu}>Cerrar</button>
                             </dialog>
                         )}
@@ -91,7 +91,7 @@ const Header = () => {
                                 <h3 style={{ color:'rgb(8, 8, 8)' }}>Ubicación</h3>
                                 <p>Para que no te pierdas, te dejamos aquí la ubicación exacta del estadio</p>
                                 
-                                {/* Aquí iría el mapa del spotify camp nou */}
+                                
                                 <div style={{ marginTop: '1rem' }}>
                                     <h3 style={{ color:'rgb(8, 8, 8)' }}>¿Cómo llegar al Spotify Camp Nou?</h3>
                                     <div style={{ borderRadius: '10px', overflow: 'hidden', marginTop: '0.5rem' }}>
